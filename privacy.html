@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — AI Trade Mentor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #06061a;
+            --purple: #7c3aed;
+            --purple2: #9333ea;
+            --pink: #ec4899;
+            --magenta: #e040fb;
+            --cyan: #22d3ee;
+            --gx1: #ff2d9b;
+            --gx2: #c026d3;
+            --gx3: #7c3aed;
+            --gx4: #06b6d4;
+            --w: #ffffff;
+            --w80: rgba(255, 255, 255, .80);
+            --w55: rgba(255, 255, 255, .55);
+            --w28: rgba(255, 255, 255, .28);
+            --w10: rgba(255, 255, 255, .10);
+            --fb: 'Outfit', system-ui, sans-serif;
+            --fd: 'Playfair Display', Georgia, serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: var(--fb);
+            background: var(--bg);
+            color: var(--w);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden
+        }
+
+        canvas#gx-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3rem;
+            background: rgba(6, 6, 26, .85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(124, 58, 237, .14)
+        }
+
+        .nav-brand {
+            font-family: var(--fb);
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--w80);
+            text-decoration: none
+        }
+
+        .nav-brand .ai {
+            color: var(--pink)
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 120px auto 100px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .legal-header {
+            margin-bottom: 3rem;
+            text-align: center
+        }
+
+        h1 {
+            font-family: var(--fd);
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--gx1), var(--gx2), var(--gx3), var(--gx4));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .legal-content h3 {
+            font-family: var(--fb);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--gx1), var(--gx2), var(--gx3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 2.5rem 0 .8rem
+        }
+
+        .legal-content p {
+            font-size: .95rem;
+            font-weight: 300;
+            color: var(--w55);
+            line-height: 1.8;
+            margin-bottom: 1.2rem
+        }
+
+        .legal-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem
+        }
+
+        .legal-content ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: .8rem;
+            font-size: .95rem;
+            font-weight: 300;
+            color: var(--w55);
+            margin-bottom: .6rem
+        }
+
+        .legal-content ul li::before {
+            content: '›';
+            background: linear-gradient(90deg, var(--gx1), var(--gx2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            line-height: 1.2
+        }
+
+        .legal-content strong {
+            color: var(--w80);
+            font-weight: 500
+        }
+
+        .legal-content a {
+            color: var(--pink);
+            text-decoration: none
+        }
+
+        .disclaimer-box {
+            background: rgba(124, 58, 237, .06);
+            border: 1px solid rgba(124, 58, 237, .2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            text-align: center
+        }
+
+        .disclaimer-box p {
+            font-size: .85rem;
+            color: var(--w55);
+            margin: 0
+        }
+
+        .disclaimer-box strong {
+            color: var(--pink)
+        }
+
+        footer {
+            border-top: 1px solid rgba(124, 58, 237, .12);
+            padding: 3rem;
+            text-align: center;
+            background: rgba(0, 0, 0, .3)
+        }
+
+        .ft-brand {
+            font-family: var(--fb);
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem
+        }
+
+        .ft-brand .ai {
+            color: var(--pink)
+        }
+
+        .ft-copy {
+            font-size: .7rem;
+            color: var(--w28);
+            margin-bottom: .5rem
+        }
+
+        .back-link {
+            font-size: .8rem;
+            color: var(--w55);
+            text-decoration: none;
+            transition: color .2s
+        }
+
+        .back-link:hover {
+            color: #fff
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="gx-bg"></canvas>
+
+    <nav>
+        <a href="index.html" class="nav-brand"><span class="ai">AI</span> TRADE MENTOR</a>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </nav>
+
+    <div class="legal-container">
+        <div class="legal-header">
+            <h1>Privacy Policy</h1>
+            <p style="color:var(--w55)">Last updated 2026 · AI Trade Mentor</p>
+        </div>
+
+        <div class="legal-content">
+            <h3>Who We Are</h3>
+            <p>AI TradeMentor is an educational and informational application. We are committed to protecting your
+                personal data and respecting your privacy in compliance with the <strong>EU General Data Protection
+                    Regulation (GDPR)</strong> and the <strong>California Consumer Privacy Act (CCPA/CPRA)</strong>.</p>
+
+            <h3>Data We Collect</h3>
+            <p>We collect only the data necessary to provide and improve the app experience. This may include account
+                information, usage data, and device identifiers. We do not collect or process financial or payment data
+                directly.</p>
+
+            <h3>EU — GDPR Rights (Articles 15–20)</h3>
+            <ul>
+                <li>Right to <strong>access</strong> your personal data</li>
+                <li>Right to <strong>rectify</strong> inaccurate data</li>
+                <li>Right to <strong>erasure</strong> ("right to be forgotten")</li>
+                <li>Right to <strong>data portability</strong></li>
+                <li>Right to <strong>withdraw consent</strong> at any time (Article 7(3) GDPR)</li>
+                <li>Data is collected for specified, explicit, and legitimate purposes only (Article 5 GDPR)</li>
+                <li>Appropriate technical and organisational security measures are implemented (Article 32 GDPR)</li>
+            </ul>
+
+            <h3>ePrivacy & Cookies</h3>
+            <p>In compliance with the ePrivacy Directive (2002/58/EC), we obtain your consent before storing or
+                accessing information on your device. Electronic communications are treated confidentially.</p>
+
+            <h3>California Residents — CCPA/CPRA Rights</h3>
+            <ul>
+                <li>Right to <strong>know</strong> what personal information is collected and how it is used</li>
+                <li>Right to <strong>delete</strong> your personal information</li>
+                <li>Right to <strong>opt out</strong> of the sale or sharing of personal information</li>
+                <li>Right to <strong>non-discrimination</strong> for exercising your privacy rights</li>
+                <li>We respond to verifiable consumer requests within <strong>45 days</strong></li>
+            </ul>
+
+            <h3>Children's Privacy (COPPA)</h3>
+            <p>This application is not directed at children under the age of 13. We do not knowingly collect personal
+                information from children under 13. If we discover that we have collected data from a child under 13, we
+                will delete it promptly.</p>
+
+            <h3>Data Security</h3>
+            <p>We implement appropriate technical and organisational measures to ensure a level of security appropriate
+                to the risk, as required by GDPR Article 32. All data processing activities are documented as required
+                by Article 30.</p>
+
+            <h3>Marketing Communications (CAN-SPAM)</h3>
+            <ul>
+                <li>All marketing emails include a clear <strong>opt-out mechanism</strong></li>
+                <li>Subject lines accurately reflect message content</li>
+                <li>Opt-out requests are honoured within <strong>10 business days</strong></li>
+            </ul>
+
+            <div class="disclaimer-box">
+                <p><strong>Disclaimer:</strong> AI Trade Mentor provides educational and psychological coaching only.
+                    This is not financial advice.</p>
+            </div>
+
+            <h3>Contact Us</h3>
+            <p>For general privacy inquiries: <a href="mailto:support@aitradementor.com">support@aitradementor.com</a>
+            </p>
+            <p>For GDPR/data protection inquiries: <a href="mailto:dpo@aitradementor.com">dpo@aitradementor.com</a></p>
+            <p>EU ODR Platform: <a href="https://ec.europa.eu/odr" target="_blank">https://ec.europa.eu/odr</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <span class="ft-brand"><span class="ai">AI</span> TRADE MENTOR</span>
+        <p class="ft-copy">© 2026 AI Trade Mentor · Educational purposes only · Not financial advice</p>
+    </footer>
+
+    <script>
+        (function () {
+            const c = document.getElementById('gx-bg'), x = c.getContext('2d');
+            let W, H, S = [];
+            const sz = () => { W = c.width = innerWidth; H = c.height = innerHeight };
+            sz(); addEventListener('resize', sz);
+            const init = () => { S = []; for (let i = 0; i < 200; i++)S.push({ x: Math.random() * W, y: Math.random() * H, r: .1 + Math.random() * 1.2, vx: (Math.random() - .5) * .05, vy: (Math.random() - .5) * .05, a: Math.random() * .3 + .05, tw: Math.random() * 6.28, tws: .003 + Math.random() * .007, t: Math.floor(Math.random() * 3) }) };
+            init();
+            const CO = ['rgba(255,255,255,', 'rgba(255,45,155,', 'rgba(124,58,237,'];
+            const draw = () => {
+                x.clearRect(0, 0, W, H);
+                x.fillStyle = '#06061a'; x.fillRect(0, 0, W, H);
+                S.forEach(s => { s.x += s.vx; s.y += s.vy; if (s.x < 0) s.x = W; if (s.x > W) s.x = 0; if (s.y < 0) s.y = H; if (s.y > H) s.y = 0; s.tw += s.tws; const a = s.a * (.3 + .7 * Math.sin(s.tw)); x.beginPath(); x.arc(s.x, s.y, s.r, 0, Math.PI * 2); x.fillStyle = CO[s.t] + a + ')'; x.fill() });
+                requestAnimationFrame(draw);
+            }; draw();
+        })();
+    </script>
+</body>
+
+</html>
