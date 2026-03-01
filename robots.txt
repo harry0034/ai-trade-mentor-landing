@@ -7,4 +7,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://aitradementor.com/sitemap.xml
+Sitemap: https://ai-trade-mentor-landing.vercel.app/sitemap.xml
